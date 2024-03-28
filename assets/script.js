@@ -1,48 +1,51 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector("#add-employees-btn");
 
-// Collect employee data
+// Collects employee data from prompt inputs
 let employees = [];
 const collectEmployees = function () {
-  // TODO: Get user input to create and return an array of employee objects
+// a loop that prompts the user for inputs 
 
   let addWorker = true;
   while (addWorker) {
     let inFirst = prompt(`Enter first name`);
     let inLast = prompt(`Enter last name`);
     let salary = parseFloat(prompt(`add Monie$$`));
-
+//sets salary to 0 if inout is anything other then a number
     if (isNaN(salary)) {
       salary = 0}
-
+//pushes all inputs as an object to the employees array
       employees.push({
         firstName: inFirst,
         lastName: inLast,
         salary: salary,
       });
-
+// this alert will keep the loop going or cancel add inputs to table
     addWorker = confirm(`Add More?`);
   }
+  //on cancel ^ add inputs to table
   return employees;
 };
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
-  // TODO: Calculate and display the average salary
+// searches the employees array for salaries and adds them to gether 
   let salarySum = 0;
   for (let i = 0; i < employeesArray.length; i++){
     salarySum += employeesArray[i].salary;
   };
+// this does the basic math of taking the sum and dividing by the array length
  let salaryAv = salarySum / employeesArray.length;
 console.log(`Average salary is ${salaryAv}`)
 };
 
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
-  // TODO: Select and display a random employee
+// gets a random rumber from the array index
 let randomIndex = Math.floor(Math.random()* employeesArray.length);
-
+// gets the random name from the employees array
 let randomWorker = employeesArray[randomIndex];
+// logs our first and last name based on the random index.//dot notation
 console.log(`${randomWorker.firstName} ${randomWorker.lastName}You WON a trip to the"island"`);
 
 
