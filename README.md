@@ -19,7 +19,7 @@ and select a random one at random for a lotory.
     Click on the add button aa prompt will ask you to fill out your employees 
     information. 
 
-    ![Screen capture](https://imgur.com/IhxI5WD)
+    [Screen capture](https://imgur.com/IhxI5WD)
     
 
 
